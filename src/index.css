@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokeny z DESIGN.md §3 i §7. Tailwind tylko je mapuje (tailwind.config.js). */
+:root {
+  --paper:#FFF6EC; --surface:#FFFFFF; --ink:#2B2230; --ink-muted:#6B5F70;
+  --coral:#FF7A59; --coral-soft:#FFE3D9; --lavender:#6A58E8; --lavender-soft:#ECE9FF;
+  --lime:#B8E986; --lime-ink:#3F7A12; --lime-soft:#E9F8D8; --sun:#FFD23F; --flame:#FF8A1F;
+  --heart:#E5484D; --error-ink:#B3261E; --error-soft:#FFE1DE; --locked:#EFE6DA;
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-node:16px;
+  --shadow-sm:2px 2px 0 var(--ink); --shadow-md:3px 3px 0 var(--ink); --shadow-lg:4px 4px 0 var(--ink);
+  --font-head:'Young Serif', serif; --font-body:'DM Sans', sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ink); /* tło strony za ramką telefonu (DESIGN.md §4) */
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  /* Naklejka: kontur 2px tuszu + twardy cień. Wciśnięcie = przesunięcie o wartość cienia. */
+  .sticker { @apply border-2 border-ink; }
+  .press-lg { box-shadow: var(--shadow-lg); transition: transform 120ms var(--ease), box-shadow 120ms var(--ease); }
+  .press-lg:active:not(:disabled) { transform: translate(4px, 4px); box-shadow: none; }
+  .press-md { box-shadow: var(--shadow-md); transition: transform 120ms var(--ease), box-shadow 120ms var(--ease); }
+  .press-md:active:not(:disabled) { transform: translate(3px, 3px); box-shadow: none; }
+  .press-sm { box-shadow: var(--shadow-sm); transition: transform 120ms var(--ease), box-shadow 120ms var(--ease); }
+  .press-sm:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: none; }
+  .text-label-caps { @apply font-body text-label font-bold uppercase; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+@keyframes pop { from { transform: scale(.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
