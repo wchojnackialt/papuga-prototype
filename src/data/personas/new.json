@@ -1,0 +1,40 @@
+{
+  "persona": "new",
+  "onboarded": false,
+  "profile": {
+    "name": "Ty",
+    "avatar": "🦜",
+    "ageBand": null,
+    "goal": null,
+    "dailyGoalMin": null,
+    "joinedAt": "2026-10-20"
+  },
+  "plan": "free",
+  "subscription": null,
+  "streak": {
+    "current": 0,
+    "longest": 0,
+    "lastActiveDate": null,
+    "freezesLeft": 0,
+    "frozenDates": []
+  },
+  "xp": {
+    "total": 0,
+    "thisWeek": 0,
+    "weekOf": "2026-10-19"
+  },
+  "hearts": 5,
+  "heartsLostAt": null,
+  "league": {
+    "tier": "bronze"
+  },
+  "progress": {
+    "completedLessons": [],
+    "currentLesson": "u1-l1"
+  },
+  "quests": {
+    "date": "2026-10-20",
+    "items": []
+  },
+  "badges": []
+}

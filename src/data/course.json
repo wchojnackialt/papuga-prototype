@@ -1,0 +1,305 @@
+{
+  "id": "en-pl",
+  "language": "en",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Podstawy",
+      "locked": false,
+      "lessons": [
+        {
+          "id": "u1-l1",
+          "title": "Powitania",
+          "kind": "lesson",
+          "exercisePool": [
+            "u1-l1-e01",
+            "u1-l1-e02",
+            "u1-l1-e03",
+            "u1-l1-e04",
+            "u1-l1-e05",
+            "u1-l1-e06",
+            "u1-l1-e07",
+            "u1-l1-e08",
+            "u1-l1-e09",
+            "u1-l1-e10",
+            "u1-l1-e11",
+            "u1-l1-e12",
+            "u1-l1-e13",
+            "u1-l1-e14",
+            "u1-l1-e15"
+          ]
+        },
+        {
+          "id": "u1-l2",
+          "title": "Przedstaw się",
+          "kind": "lesson",
+          "exercisePool": [
+            "u1-l2-e01",
+            "u1-l2-e02",
+            "u1-l2-e03",
+            "u1-l2-e04",
+            "u1-l2-e05",
+            "u1-l2-e06",
+            "u1-l2-e07",
+            "u1-l2-e08",
+            "u1-l2-e09",
+            "u1-l2-e10",
+            "u1-l2-e11",
+            "u1-l2-e12",
+            "u1-l2-e13",
+            "u1-l2-e14",
+            "u1-l2-e15"
+          ]
+        },
+        {
+          "id": "u1-l3",
+          "title": "Lekcja 3",
+          "kind": "lesson",
+          "exercisePool": [
+            "u1-l1-e01",
+            "u1-l1-e02",
+            "u1-l1-e03",
+            "u1-l1-e04",
+            "u1-l1-e05",
+            "u1-l1-e06",
+            "u1-l1-e07",
+            "u1-l1-e08",
+            "u1-l1-e09",
+            "u1-l1-e10",
+            "u1-l1-e11",
+            "u1-l1-e12",
+            "u1-l1-e13",
+            "u1-l1-e14",
+            "u1-l1-e15",
+            "u1-l2-e01",
+            "u1-l2-e02",
+            "u1-l2-e03",
+            "u1-l2-e04",
+            "u1-l2-e05",
+            "u1-l2-e06",
+            "u1-l2-e07",
+            "u1-l2-e08",
+            "u1-l2-e09",
+            "u1-l2-e10",
+            "u1-l2-e11",
+            "u1-l2-e12",
+            "u1-l2-e13",
+            "u1-l2-e14",
+            "u1-l2-e15"
+          ]
+        },
+        {
+          "id": "u1-l4",
+          "title": "Lekcja 4",
+          "kind": "lesson",
+          "exercisePool": [
+            "u1-l1-e01",
+            "u1-l1-e02",
+            "u1-l1-e03",
+            "u1-l1-e04",
+            "u1-l1-e05",
+            "u1-l1-e06",
+            "u1-l1-e07",
+            "u1-l1-e08",
+            "u1-l1-e09",
+            "u1-l1-e10",
+            "u1-l1-e11",
+            "u1-l1-e12",
+            "u1-l1-e13",
+            "u1-l1-e14",
+            "u1-l1-e15",
+            "u1-l2-e01",
+            "u1-l2-e02",
+            "u1-l2-e03",
+            "u1-l2-e04",
+            "u1-l2-e05",
+            "u1-l2-e06",
+            "u1-l2-e07",
+            "u1-l2-e08",
+            "u1-l2-e09",
+            "u1-l2-e10",
+            "u1-l2-e11",
+            "u1-l2-e12",
+            "u1-l2-e13",
+            "u1-l2-e14",
+            "u1-l2-e15"
+          ]
+        },
+        {
+          "id": "u1-chest",
+          "title": "Skrzynka",
+          "kind": "chest",
+          "exercisePool": []
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "W kawiarni",
+      "locked": false,
+      "lessons": [
+        {
+          "id": "u2-l1",
+          "title": "Zamawianie",
+          "kind": "lesson",
+          "exercisePool": [
+            "u2-l1-e01",
+            "u2-l1-e02",
+            "u2-l1-e03",
+            "u2-l1-e04",
+            "u2-l1-e05",
+            "u2-l1-e06",
+            "u2-l1-e07",
+            "u2-l1-e08",
+            "u2-l1-e09",
+            "u2-l1-e10",
+            "u2-l1-e11",
+            "u2-l1-e12",
+            "u2-l1-e13",
+            "u2-l1-e14",
+            "u2-l1-e15"
+          ]
+        },
+        {
+          "id": "u2-l2",
+          "title": "Płacenie",
+          "kind": "lesson",
+          "exercisePool": [
+            "u2-l2-e01",
+            "u2-l2-e02",
+            "u2-l2-e03",
+            "u2-l2-e04",
+            "u2-l2-e05",
+            "u2-l2-e06",
+            "u2-l2-e07",
+            "u2-l2-e08",
+            "u2-l2-e09",
+            "u2-l2-e10",
+            "u2-l2-e11",
+            "u2-l2-e12",
+            "u2-l2-e13",
+            "u2-l2-e14",
+            "u2-l2-e15"
+          ]
+        },
+        {
+          "id": "u2-l3",
+          "title": "Lekcja 3",
+          "kind": "lesson",
+          "exercisePool": [
+            "u2-l1-e01",
+            "u2-l1-e02",
+            "u2-l1-e03",
+            "u2-l1-e04",
+            "u2-l1-e05",
+            "u2-l1-e06",
+            "u2-l1-e07",
+            "u2-l1-e08",
+            "u2-l1-e09",
+            "u2-l1-e10",
+            "u2-l1-e11",
+            "u2-l1-e12",
+            "u2-l1-e13",
+            "u2-l1-e14",
+            "u2-l1-e15",
+            "u2-l2-e01",
+            "u2-l2-e02",
+            "u2-l2-e03",
+            "u2-l2-e04",
+            "u2-l2-e05",
+            "u2-l2-e06",
+            "u2-l2-e07",
+            "u2-l2-e08",
+            "u2-l2-e09",
+            "u2-l2-e10",
+            "u2-l2-e11",
+            "u2-l2-e12",
+            "u2-l2-e13",
+            "u2-l2-e14",
+            "u2-l2-e15"
+          ]
+        },
+        {
+          "id": "u2-l4",
+          "title": "Lekcja 4",
+          "kind": "lesson",
+          "exercisePool": [
+            "u2-l1-e01",
+            "u2-l1-e02",
+            "u2-l1-e03",
+            "u2-l1-e04",
+            "u2-l1-e05",
+            "u2-l1-e06",
+            "u2-l1-e07",
+            "u2-l1-e08",
+            "u2-l1-e09",
+            "u2-l1-e10",
+            "u2-l1-e11",
+            "u2-l1-e12",
+            "u2-l1-e13",
+            "u2-l1-e14",
+            "u2-l1-e15",
+            "u2-l2-e01",
+            "u2-l2-e02",
+            "u2-l2-e03",
+            "u2-l2-e04",
+            "u2-l2-e05",
+            "u2-l2-e06",
+            "u2-l2-e07",
+            "u2-l2-e08",
+            "u2-l2-e09",
+            "u2-l2-e10",
+            "u2-l2-e11",
+            "u2-l2-e12",
+            "u2-l2-e13",
+            "u2-l2-e14",
+            "u2-l2-e15"
+          ]
+        },
+        {
+          "id": "u2-chest",
+          "title": "Skrzynka",
+          "kind": "chest",
+          "exercisePool": []
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "W podróży",
+      "locked": true,
+      "lessons": [
+        {
+          "id": "u3-l1",
+          "title": "Lekcja 1",
+          "kind": "lesson",
+          "exercisePool": []
+        },
+        {
+          "id": "u3-l2",
+          "title": "Lekcja 2",
+          "kind": "lesson",
+          "exercisePool": []
+        },
+        {
+          "id": "u3-l3",
+          "title": "Lekcja 3",
+          "kind": "lesson",
+          "exercisePool": []
+        },
+        {
+          "id": "u3-l4",
+          "title": "Lekcja 4",
+          "kind": "lesson",
+          "exercisePool": []
+        },
+        {
+          "id": "u3-chest",
+          "title": "Skrzynka",
+          "kind": "chest",
+          "exercisePool": []
+        }
+      ]
+    }
+  ]
+}

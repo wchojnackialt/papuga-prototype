@@ -1,0 +1,53 @@
+{
+  "persona": "zosia",
+  "onboarded": true,
+  "profile": {
+    "name": "Zosia",
+    "avatar": "🦋",
+    "ageBand": "16-19",
+    "goal": "school",
+    "dailyGoalMin": 10,
+    "joinedAt": "2025-08-14"
+  },
+  "plan": "family",
+  "subscription": {
+    "renewsAt": "2027-02-01",
+    "payer": "parent"
+  },
+  "streak": {
+    "current": 412,
+    "longest": 412,
+    "lastActiveDate": "2026-10-19",
+    "freezesLeft": 1,
+    "frozenDates": []
+  },
+  "xp": {
+    "total": 12480,
+    "thisWeek": 340,
+    "weekOf": "2026-10-19"
+  },
+  "hearts": null,
+  "heartsLostAt": null,
+  "league": {
+    "tier": "diamond"
+  },
+  "progress": {
+    "completedLessons": [
+      "u1-l1",
+      "u1-l2",
+      "u1-l3",
+      "u1-l4",
+      "u1-chest",
+      "u2-l1"
+    ],
+    "currentLesson": "u2-l2"
+  },
+  "quests": {
+    "date": "2026-10-20",
+    "items": []
+  },
+  "badges": [
+    "streak-365",
+    "league-gold"
+  ]
+}

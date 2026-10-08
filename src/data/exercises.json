@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "u1-l1-e01",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Cześć, jak się masz?",
+    "options": [
+      "Hi, how are you?",
+      "Hi, who are you?",
+      "Hi, where are you?",
+      "Hi, how old are you?"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "u1-l1-e02",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Dzień dobry!",
+    "options": [
+      "Good night!",
+      "Good morning!",
+      "Goodbye!",
+      "Good luck!"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "u1-l1-e03",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Do zobaczenia jutro.",
+    "options": [
+      "See you yesterday.",
+      "Look at you tomorrow.",
+      "See me tomorrow.",
+      "See you tomorrow."
+    ],
+    "answer": 3
+  },
+  {
+    "id": "u1-l1-e04",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Miło cię poznać.",
+    "options": [
+      "Nice to see me.",
+      "Meet you nice.",
+      "Nice to meet you.",
+      "Nice to eat you."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "u1-l1-e05",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Dobranoc, Pola!",
+    "tiles": [
+      "Good",
+      "night",
+      ",",
+      "Pola",
+      "!",
+      "morning",
+      "day"
+    ],
+    "answer": [
+      "Good",
+      "night",
+      ",",
+      "Pola",
+      "!"
+    ]
+  },
+  {
+    "id": "u1-l1-e06",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "greetings",
+      "questions"
+    ],
+    "prompt": "Jak się masz?",
+    "tiles": [
+      "How",
+      "are",
+      "you",
+      "?",
+      "is",
+      "old"
+    ],
+    "answer": [
+      "How",
+      "are",
+      "you",
+      "?"
+    ]
+  },
+  {
+    "id": "u1-l1-e07",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "greetings",
+      "to-be"
+    ],
+    "prompt": "Mam się dobrze, dziękuję.",
+    "tiles": [
+      "I",
+      "am",
+      "fine",
+      ",",
+      "thank",
+      "you",
+      ".",
+      "is",
+      "are"
+    ],
+    "answer": [
+      "I",
+      "am",
+      "fine",
+      ",",
+      "thank",
+      "you",
+      "."
+    ]
+  },
+  {
+    "id": "u1-l1-e08",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Do widzenia, papugo.",
+    "tiles": [
+      "Goodbye",
+      ",",
+      "parrot",
+      ".",
+      "Hello",
+      "carrot"
+    ],
+    "answer": [
+      "Goodbye",
+      ",",
+      "parrot",
+      "."
+    ]
+  },
+  {
+    "id": "u1-l1-e09",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "cześć",
+        "hi"
+      ],
+      [
+        "do widzenia",
+        "goodbye"
+      ],
+      [
+        "dziękuję",
+        "thank you"
+      ],
+      [
+        "proszę",
+        "please"
+      ],
+      [
+        "przepraszam",
+        "sorry"
+      ]
+    ]
+  },
+  {
+    "id": "u1-l1-e10",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "time-of-day"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "rano",
+        "morning"
+      ],
+      [
+        "wieczór",
+        "evening"
+      ],
+      [
+        "noc",
+        "night"
+      ],
+      [
+        "dzień",
+        "day"
+      ],
+      [
+        "jutro",
+        "tomorrow"
+      ]
+    ]
+  },
+  {
+    "id": "u1-l1-e11",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "basic-words"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "dobry",
+        "good"
+      ],
+      [
+        "miły",
+        "nice"
+      ],
+      [
+        "ty",
+        "you"
+      ],
+      [
+        "ja",
+        "I"
+      ],
+      [
+        "tak",
+        "yes"
+      ]
+    ]
+  },
+  {
+    "id": "u1-l1-e12",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Dzień dobry, Pola.",
+    "accepted": [
+      "Good morning, Pola.",
+      "Good afternoon, Pola.",
+      "Good day, Pola.",
+      "Hello, Pola."
+    ]
+  },
+  {
+    "id": "u1-l1-e13",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "greetings"
+    ],
+    "prompt": "Dobry wieczór.",
+    "accepted": [
+      "Good evening."
+    ]
+  },
+  {
+    "id": "u1-l1-e14",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "greetings",
+      "to-be"
+    ],
+    "prompt": "Mam się dobrze.",
+    "accepted": [
+      "I am fine.",
+      "I'm fine.",
+      "I am good.",
+      "I'm good.",
+      "I am well.",
+      "I'm well.",
+      "I am OK.",
+      "I'm OK."
+    ]
+  },
+  {
+    "id": "u1-l1-e15",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "greetings",
+      "present-simple"
+    ],
+    "prompt": "Papuga mówi cześć.",
+    "accepted": [
+      "The parrot says hi.",
+      "The parrot says hello.",
+      "A parrot says hi.",
+      "A parrot says hello."
+    ]
+  },
+  {
+    "id": "u1-l2-e01",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "introductions",
+      "to-be"
+    ],
+    "prompt": "Nazywam się Pola.",
+    "options": [
+      "My name are Pola.",
+      "My name is Pola.",
+      "I name is Pola.",
+      "Me name Pola."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "u1-l2-e02",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "introductions",
+      "questions"
+    ],
+    "prompt": "Skąd jesteś?",
+    "options": [
+      "Where are you?",
+      "Who are you from?",
+      "What are you from?",
+      "Where are you from?"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "u1-l2-e03",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "introductions",
+      "numbers"
+    ],
+    "prompt": "Mam dwanaście lat.",
+    "options": [
+      "I have twelve years.",
+      "I am twelve years old.",
+      "I am twelve old years.",
+      "My twelve years."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "u1-l2-e04",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "family",
+      "to-be"
+    ],
+    "prompt": "To jest mój brat.",
+    "options": [
+      "This is my brother.",
+      "This are my brother.",
+      "It my brother is.",
+      "This is me brother."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "u1-l2-e05",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "introductions",
+      "to-be"
+    ],
+    "prompt": "Jestem z Polski.",
+    "tiles": [
+      "I",
+      "am",
+      "from",
+      "Poland",
+      ".",
+      "Polish",
+      "to"
+    ],
+    "answer": [
+      "I",
+      "am",
+      "from",
+      "Poland",
+      "."
+    ]
+  },
+  {
+    "id": "u1-l2-e06",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "introductions"
+    ],
+    "prompt": "Ona ma na imię Ola.",
+    "tiles": [
+      "Her",
+      "name",
+      "is",
+      "Ola",
+      ".",
+      "Hers",
+      "his"
+    ],
+    "answer": [
+      "Her",
+      "name",
+      "is",
+      "Ola",
+      "."
+    ]
+  },
+  {
+    "id": "u1-l2-e07",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "introductions",
+      "present-simple"
+    ],
+    "prompt": "Mieszkam w Krakowie.",
+    "tiles": [
+      "I",
+      "live",
+      "in",
+      "Krakow",
+      ".",
+      "lives",
+      "on"
+    ],
+    "answer": [
+      "I",
+      "live",
+      "in",
+      "Krakow",
+      "."
+    ]
+  },
+  {
+    "id": "u1-l2-e08",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "introductions",
+      "questions"
+    ],
+    "prompt": "Kim jesteś?",
+    "tiles": [
+      "Who",
+      "are",
+      "you",
+      "?",
+      "is",
+      "what"
+    ],
+    "answer": [
+      "Who",
+      "are",
+      "you",
+      "?"
+    ]
+  },
+  {
+    "id": "u1-l2-e09",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "family"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "imię",
+        "name"
+      ],
+      [
+        "brat",
+        "brother"
+      ],
+      [
+        "siostra",
+        "sister"
+      ],
+      [
+        "przyjaciel",
+        "friend"
+      ],
+      [
+        "kot",
+        "cat"
+      ]
+    ]
+  },
+  {
+    "id": "u1-l2-e10",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "numbers"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "jeden",
+        "one"
+      ],
+      [
+        "dwa",
+        "two"
+      ],
+      [
+        "trzy",
+        "three"
+      ],
+      [
+        "dziesięć",
+        "ten"
+      ],
+      [
+        "dwanaście",
+        "twelve"
+      ]
+    ]
+  },
+  {
+    "id": "u1-l2-e11",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "family",
+      "places"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "mama",
+        "mum"
+      ],
+      [
+        "tata",
+        "dad"
+      ],
+      [
+        "dom",
+        "home"
+      ],
+      [
+        "miasto",
+        "city"
+      ],
+      [
+        "kraj",
+        "country"
+      ]
+    ]
+  },
+  {
+    "id": "u1-l2-e12",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "introductions",
+      "to-be"
+    ],
+    "prompt": "Jestem Pola.",
+    "accepted": [
+      "I am Pola.",
+      "I'm Pola."
+    ]
+  },
+  {
+    "id": "u1-l2-e13",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "family",
+      "to-be"
+    ],
+    "prompt": "Ona jest moją siostrą.",
+    "accepted": [
+      "She is my sister.",
+      "She's my sister."
+    ]
+  },
+  {
+    "id": "u1-l2-e14",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "introductions",
+      "present-simple"
+    ],
+    "prompt": "Mieszkam w Polsce.",
+    "accepted": [
+      "I live in Poland."
+    ]
+  },
+  {
+    "id": "u1-l2-e15",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "introductions"
+    ],
+    "prompt": "Mój kot ma na imię Leon.",
+    "accepted": [
+      "My cat's name is Leon.",
+      "My cat is called Leon.",
+      "My cat is named Leon.",
+      "The name of my cat is Leon."
+    ]
+  },
+  {
+    "id": "u2-l1-e01",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "ordering-food"
+    ],
+    "prompt": "Poproszę kawę z mlekiem.",
+    "options": [
+      "A coffee with milk, please.",
+      "A milk with coffee, please.",
+      "Coffee is milk, please.",
+      "Please the coffee milk."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "u2-l1-e02",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "asking-directions"
+    ],
+    "prompt": "Gdzie jest toaleta?",
+    "tiles": [
+      "Where",
+      "is",
+      "the",
+      "toilet",
+      "?",
+      "are",
+      "a"
+    ],
+    "answer": [
+      "Where",
+      "is",
+      "the",
+      "toilet",
+      "?"
+    ]
+  },
+  {
+    "id": "u2-l1-e03",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "food-vocabulary"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "kawa",
+        "coffee"
+      ],
+      [
+        "herbata",
+        "tea"
+      ],
+      [
+        "mleko",
+        "milk"
+      ],
+      [
+        "cukier",
+        "sugar"
+      ],
+      [
+        "ciasto",
+        "cake"
+      ]
+    ]
+  },
+  {
+    "id": "u2-l1-e04",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "present-simple"
+    ],
+    "prompt": "Papuga pije kawę.",
+    "accepted": [
+      "The parrot drinks coffee.",
+      "The parrot is drinking coffee."
+    ]
+  },
+  {
+    "id": "u2-l1-e05",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "ordering-food"
+    ],
+    "prompt": "Poproszę herbatę.",
+    "options": [
+      "Please is tea.",
+      "Tea, please.",
+      "Tea the please.",
+      "A please tea."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "u2-l1-e06",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "ordering-food",
+      "questions"
+    ],
+    "prompt": "Ile kosztuje ciasto?",
+    "options": [
+      "How many is the cake?",
+      "What cost the cake?",
+      "How much cake is?",
+      "How much is the cake?"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "u2-l1-e07",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "present-simple"
+    ],
+    "prompt": "Papuga je ciasto.",
+    "options": [
+      "The parrot eat cake.",
+      "The cake eats the parrot.",
+      "The parrot eats cake.",
+      "The parrot is cake."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "u2-l1-e08",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "ordering-food"
+    ],
+    "prompt": "Chcę wodę, proszę.",
+    "tiles": [
+      "I",
+      "want",
+      "water",
+      ",",
+      "please",
+      ".",
+      "wants",
+      "drink"
+    ],
+    "answer": [
+      "I",
+      "want",
+      "water",
+      ",",
+      "please",
+      "."
+    ]
+  },
+  {
+    "id": "u2-l1-e09",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "ordering-food",
+      "questions"
+    ],
+    "prompt": "Czy masz mleko?",
+    "tiles": [
+      "Do",
+      "you",
+      "have",
+      "milk",
+      "?",
+      "Does",
+      "has"
+    ],
+    "answer": [
+      "Do",
+      "you",
+      "have",
+      "milk",
+      "?"
+    ]
+  },
+  {
+    "id": "u2-l1-e10",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "food-vocabulary",
+      "to-be"
+    ],
+    "prompt": "Kawa jest gorąca.",
+    "tiles": [
+      "The",
+      "coffee",
+      "is",
+      "hot",
+      ".",
+      "cold",
+      "are"
+    ],
+    "answer": [
+      "The",
+      "coffee",
+      "is",
+      "hot",
+      "."
+    ]
+  },
+  {
+    "id": "u2-l1-e11",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "food-vocabulary"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "woda",
+        "water"
+      ],
+      [
+        "sok",
+        "juice"
+      ],
+      [
+        "kanapka",
+        "sandwich"
+      ],
+      [
+        "lody",
+        "ice cream"
+      ],
+      [
+        "jabłko",
+        "apple"
+      ]
+    ]
+  },
+  {
+    "id": "u2-l1-e12",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "adjectives"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "gorący",
+        "hot"
+      ],
+      [
+        "zimny",
+        "cold"
+      ],
+      [
+        "duży",
+        "big"
+      ],
+      [
+        "mały",
+        "small"
+      ],
+      [
+        "słodki",
+        "sweet"
+      ]
+    ]
+  },
+  {
+    "id": "u2-l1-e13",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "ordering-food"
+    ],
+    "prompt": "Poproszę wodę.",
+    "accepted": [
+      "Water, please.",
+      "Some water, please.",
+      "A water, please.",
+      "I would like water, please.",
+      "I'd like water, please.",
+      "I would like some water, please.",
+      "I'd like some water, please.",
+      "Can I have water, please?",
+      "Can I have some water, please?"
+    ]
+  },
+  {
+    "id": "u2-l1-e14",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "food-vocabulary",
+      "to-be"
+    ],
+    "prompt": "Herbata jest zimna.",
+    "accepted": [
+      "The tea is cold.",
+      "Tea is cold.",
+      "The tea's cold."
+    ]
+  },
+  {
+    "id": "u2-l1-e15",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "present-simple"
+    ],
+    "prompt": "Papuga lubi ciasto.",
+    "accepted": [
+      "The parrot likes cake.",
+      "The parrot likes cakes.",
+      "The parrot likes the cake.",
+      "A parrot likes cake."
+    ]
+  },
+  {
+    "id": "u2-l2-e01",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "paying"
+    ],
+    "prompt": "Rachunek, proszę.",
+    "options": [
+      "The bird, please.",
+      "A pay, please.",
+      "Bill me please the.",
+      "The bill, please."
+    ],
+    "answer": 3
+  },
+  {
+    "id": "u2-l2-e02",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "paying",
+      "questions"
+    ],
+    "prompt": "Czy mogę zapłacić kartą?",
+    "options": [
+      "Can I pay with cart?",
+      "Can I card pay?",
+      "Can I pay by card?",
+      "May card pay I?"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "u2-l2-e03",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "cafe-vocabulary",
+      "to-be"
+    ],
+    "prompt": "Ten stolik jest wolny.",
+    "options": [
+      "This table is free.",
+      "This table is busy.",
+      "This chair is free.",
+      "These table is free."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "u2-l2-e04",
+    "type": "choose_translation",
+    "source": "course",
+    "skillTags": [
+      "present-simple"
+    ],
+    "prompt": "Papuga czyta menu.",
+    "options": [
+      "The parrot read the menu.",
+      "The parrot reads the menu.",
+      "The menu reads the parrot.",
+      "The parrot eats the menu."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "u2-l2-e05",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "paying",
+      "questions"
+    ],
+    "prompt": "Ile płacę?",
+    "tiles": [
+      "How",
+      "much",
+      "do",
+      "I",
+      "pay",
+      "?",
+      "many",
+      "does"
+    ],
+    "answer": [
+      "How",
+      "much",
+      "do",
+      "I",
+      "pay",
+      "?"
+    ]
+  },
+  {
+    "id": "u2-l2-e06",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "questions"
+    ],
+    "prompt": "Mam pytanie.",
+    "tiles": [
+      "I",
+      "have",
+      "a",
+      "question",
+      ".",
+      "has",
+      "an"
+    ],
+    "answer": [
+      "I",
+      "have",
+      "a",
+      "question",
+      "."
+    ]
+  },
+  {
+    "id": "u2-l2-e07",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "cafe-vocabulary",
+      "to-be"
+    ],
+    "prompt": "Kelner jest miły.",
+    "tiles": [
+      "The",
+      "waiter",
+      "is",
+      "nice",
+      ".",
+      "water",
+      "are"
+    ],
+    "answer": [
+      "The",
+      "waiter",
+      "is",
+      "nice",
+      "."
+    ]
+  },
+  {
+    "id": "u2-l2-e08",
+    "type": "arrange_tiles",
+    "source": "course",
+    "skillTags": [
+      "questions",
+      "to-be"
+    ],
+    "prompt": "Czy to jest moja kawa?",
+    "tiles": [
+      "Is",
+      "this",
+      "my",
+      "coffee",
+      "?",
+      "are",
+      "me"
+    ],
+    "answer": [
+      "Is",
+      "this",
+      "my",
+      "coffee",
+      "?"
+    ]
+  },
+  {
+    "id": "u2-l2-e09",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "paying"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "rachunek",
+        "bill"
+      ],
+      [
+        "karta",
+        "card"
+      ],
+      [
+        "gotówka",
+        "cash"
+      ],
+      [
+        "napiwek",
+        "tip"
+      ],
+      [
+        "reszta",
+        "change"
+      ]
+    ]
+  },
+  {
+    "id": "u2-l2-e10",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "cafe-vocabulary"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "stolik",
+        "table"
+      ],
+      [
+        "krzesło",
+        "chair"
+      ],
+      [
+        "kelner",
+        "waiter"
+      ],
+      [
+        "łyżka",
+        "spoon"
+      ],
+      [
+        "filiżanka",
+        "cup"
+      ]
+    ]
+  },
+  {
+    "id": "u2-l2-e11",
+    "type": "match_pairs",
+    "source": "course",
+    "skillTags": [
+      "verbs"
+    ],
+    "prompt": "Dopasuj pary",
+    "pairs": [
+      [
+        "pić",
+        "drink"
+      ],
+      [
+        "jeść",
+        "eat"
+      ],
+      [
+        "płacić",
+        "pay"
+      ],
+      [
+        "czytać",
+        "read"
+      ],
+      [
+        "siedzieć",
+        "sit"
+      ]
+    ]
+  },
+  {
+    "id": "u2-l2-e12",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "paying",
+      "present-simple"
+    ],
+    "prompt": "Płacę gotówką.",
+    "accepted": [
+      "I pay in cash.",
+      "I pay cash.",
+      "I pay with cash.",
+      "I'm paying in cash.",
+      "I am paying in cash.",
+      "I'm paying with cash.",
+      "I am paying with cash.",
+      "I'll pay in cash.",
+      "I will pay in cash."
+    ]
+  },
+  {
+    "id": "u2-l2-e13",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "cafe-vocabulary",
+      "present-simple"
+    ],
+    "prompt": "Kelner ma kawę.",
+    "accepted": [
+      "The waiter has coffee.",
+      "The waiter has a coffee.",
+      "The waiter has the coffee."
+    ]
+  },
+  {
+    "id": "u2-l2-e14",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "cafe-vocabulary",
+      "questions"
+    ],
+    "prompt": "Gdzie jest kelner?",
+    "accepted": [
+      "Where is the waiter?",
+      "Where's the waiter?"
+    ]
+  },
+  {
+    "id": "u2-l2-e15",
+    "type": "type_translation",
+    "source": "course",
+    "skillTags": [
+      "paying",
+      "present-simple"
+    ],
+    "prompt": "Papuga płaci za herbatę.",
+    "accepted": [
+      "The parrot pays for the tea.",
+      "The parrot pays for tea.",
+      "The parrot is paying for the tea.",
+      "The parrot is paying for tea."
+    ]
+  }
+]

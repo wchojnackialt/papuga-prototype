@@ -41,3 +41,16 @@ body {
 }
 
 @keyframes pop { from { transform: scale(.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Ruch (DESIGN.md §3): 120 / 200 / 280 ms, nagroda 600 ms + konfetti 1,2 s. Reduced-motion wyłącza wszystko wyżej. */
+@keyframes bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -5px); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 30% { transform: translateY(-18px); } 60% { transform: translateY(0); } 80% { transform: translateY(-6px); } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+@keyframes slide-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes confetti { 0% { transform: translateY(-40px) rotate(0); opacity: 1; } 100% { transform: translateY(820px) rotate(540deg); opacity: 0; } }
+.animate-bob { animation: bob 1.2s var(--ease) infinite; }
+.animate-bounce-once { animation: bounce 900ms var(--ease) 2; }
+.animate-shake { animation: shake 200ms linear; }
+.animate-slide-up { animation: slide-up 200ms var(--ease); }
+.animate-screen { animation: fade-in 280ms var(--ease); }

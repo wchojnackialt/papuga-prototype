@@ -1,0 +1,185 @@
+{
+  "tierScale": {
+    "bronze": 0.25,
+    "silver": 0.45,
+    "gold": 0.65,
+    "sapphire": 0.85,
+    "diamond": 1
+  },
+  "members": [
+    {
+      "id": "m01",
+      "name": "Ania",
+      "avatar": "🦊",
+      "baseXp": 610
+    },
+    {
+      "id": "m02",
+      "name": "Bartek",
+      "avatar": "🐼",
+      "baseXp": 480
+    },
+    {
+      "id": "m03",
+      "name": "Celina",
+      "avatar": "🐸",
+      "baseXp": 395
+    },
+    {
+      "id": "m04",
+      "name": "Dawid",
+      "avatar": "🐯",
+      "baseXp": 330
+    },
+    {
+      "id": "m05",
+      "name": "Ewa",
+      "avatar": "🐨",
+      "baseXp": 310
+    },
+    {
+      "id": "m06",
+      "name": "Filip",
+      "avatar": "🐙",
+      "baseXp": 295
+    },
+    {
+      "id": "m07",
+      "name": "Gosia",
+      "avatar": "🦁",
+      "baseXp": 280
+    },
+    {
+      "id": "m08",
+      "name": "Hubert",
+      "avatar": "🐵",
+      "baseXp": 262
+    },
+    {
+      "id": "m09",
+      "name": "Iga",
+      "avatar": "🐰",
+      "baseXp": 248
+    },
+    {
+      "id": "m10",
+      "name": "Janek",
+      "avatar": "🐻",
+      "baseXp": 231
+    },
+    {
+      "id": "m11",
+      "name": "Kasia",
+      "avatar": "🐧",
+      "baseXp": 220
+    },
+    {
+      "id": "m12",
+      "name": "Leon",
+      "avatar": "🦄",
+      "baseXp": 204
+    },
+    {
+      "id": "m13",
+      "name": "Maja",
+      "avatar": "🐮",
+      "baseXp": 190
+    },
+    {
+      "id": "m14",
+      "name": "Nikodem",
+      "avatar": "🐷",
+      "baseXp": 176
+    },
+    {
+      "id": "m15",
+      "name": "Ola",
+      "avatar": "🐔",
+      "baseXp": 163
+    },
+    {
+      "id": "m16",
+      "name": "Patryk",
+      "avatar": "🐶",
+      "baseXp": 150
+    },
+    {
+      "id": "m17",
+      "name": "Roksana",
+      "avatar": "🐱",
+      "baseXp": 138
+    },
+    {
+      "id": "m18",
+      "name": "Szymon",
+      "avatar": "🦉",
+      "baseXp": 121
+    },
+    {
+      "id": "m19",
+      "name": "Tola",
+      "avatar": "🐢",
+      "baseXp": 110
+    },
+    {
+      "id": "m20",
+      "name": "Uriel",
+      "avatar": "🐳",
+      "baseXp": 96
+    },
+    {
+      "id": "m21",
+      "name": "Wiktoria",
+      "avatar": "🦋",
+      "baseXp": 84
+    },
+    {
+      "id": "m22",
+      "name": "Xawery",
+      "avatar": "🐝",
+      "baseXp": 71
+    },
+    {
+      "id": "m23",
+      "name": "Yasmin",
+      "avatar": "🦖",
+      "baseXp": 60
+    },
+    {
+      "id": "m24",
+      "name": "Zuza",
+      "avatar": "🐹",
+      "baseXp": 48
+    },
+    {
+      "id": "m25",
+      "name": "Adrian",
+      "avatar": "🦓",
+      "baseXp": 37
+    },
+    {
+      "id": "m26",
+      "name": "Bianka",
+      "avatar": "🦒",
+      "baseXp": 25
+    },
+    {
+      "id": "m27",
+      "name": "Cyprian",
+      "avatar": "🐞",
+      "baseXp": 16
+    },
+    {
+      "id": "m28",
+      "name": "Dominika",
+      "avatar": "🦔",
+      "baseXp": 8
+    },
+    {
+      "id": "m29",
+      "name": "Emil",
+      "avatar": "🐿️",
+      "baseXp": 0
+    }
+  ]
+}

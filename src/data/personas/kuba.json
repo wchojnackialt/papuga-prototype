@@ -1,0 +1,43 @@
+{
+  "persona": "kuba",
+  "onboarded": true,
+  "profile": {
+    "name": "Kuba",
+    "avatar": "🦖",
+    "ageBand": "13-15",
+    "goal": "test",
+    "dailyGoalMin": 10,
+    "joinedAt": "2026-09-02"
+  },
+  "plan": "free",
+  "subscription": null,
+  "streak": {
+    "current": 3,
+    "longest": 5,
+    "lastActiveDate": "2026-10-19",
+    "freezesLeft": 0,
+    "frozenDates": []
+  },
+  "xp": {
+    "total": 385,
+    "thisWeek": 25,
+    "weekOf": "2026-10-19"
+  },
+  "hearts": 2,
+  "heartsLostAt": "2026-10-20T09:15:00",
+  "league": {
+    "tier": "bronze"
+  },
+  "progress": {
+    "completedLessons": [
+      "u1-l1",
+      "u1-l2"
+    ],
+    "currentLesson": "u1-l3"
+  },
+  "quests": {
+    "date": "2026-10-20",
+    "items": []
+  },
+  "badges": []
+}

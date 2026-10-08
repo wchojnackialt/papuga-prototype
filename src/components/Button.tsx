@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes } from 'react'
+import type { ButtonHTMLAttributes, Ref } from 'react'
 
 type Variant = 'primary' | 'action' | 'ghost'
 
@@ -11,6 +11,7 @@ const variantClass: Record<Variant, string> = {
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant
   fullWidth?: boolean
+  ref?: Ref<HTMLButtonElement>
 }
 
 // DESIGN.md §5: primary = lavender, action = coral, ghost = surface, disabled = locked bez cienia.
