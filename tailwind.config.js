@@ -11,6 +11,7 @@ export default {
         lavender: 'var(--lavender)', 'lavender-soft': 'var(--lavender-soft)',
         lime: 'var(--lime)', 'lime-ink': 'var(--lime-ink)', 'lime-soft': 'var(--lime-soft)',
         sun: 'var(--sun)', flame: 'var(--flame)', heart: 'var(--heart)',
+        ice: 'var(--ice)', 'ice-ink': 'var(--ice-ink)', // zamrożenie serii (kalendarz)
         'error-ink': 'var(--error-ink)', 'error-soft': 'var(--error-soft)', locked: 'var(--locked)',
         league: { bronze: '#D9A273', silver: '#C9CED6', gold: '#FFD23F', sapphire: '#5AA9FF', diamond: '#B9F2FF' },
       },

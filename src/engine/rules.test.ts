@@ -218,3 +218,42 @@ describe('sprawdzanie tłumaczenia', () => {
     expect(r.isAcceptedTranslation('The parrot drink coffee.', accepted)).toBe(false)
   })
 })
+
+describe('kalendarz serii', () => {
+  it('Kuba: 3 aktywne dni do 19.10, dziś 20.10, wcześniej pominięte od dołączenia', () => {
+    const days = r.streakCalendar(persona('kuba'), '2026-10-01', '2026-10-20')
+    const status = (d: string) => days.find((x) => x.day === d)!.status
+    expect(days).toHaveLength(31)
+    expect(['2026-10-17', '2026-10-18', '2026-10-19'].map(status)).toEqual(['active', 'active', 'active'])
+    expect(status('2026-10-16')).toBe('missed')
+    expect(status('2026-10-20')).toBe('future')
+    expect(days.find((x) => x.today)?.day).toBe('2026-10-20')
+  })
+
+  it('nowy użytkownik: dni przed dołączeniem nie są pominięte', () => {
+    const days = r.streakCalendar(persona('new'), '2026-10-01', '2026-10-20')
+    expect(days.find((x) => x.day === '2026-10-10')!.status).toBe('none')
+  })
+
+  it('zamrożony dzień nie przerywa ciągu aktywnych dni', () => {
+    const s = r.rollStreak(persona('zosia'), '2026-10-21').state
+    const days = r.streakCalendar(s, '2026-10-01', '2026-10-21')
+    expect(days.find((x) => x.day === '2026-10-20')!.status).toBe('frozen')
+    expect(days.find((x) => x.day === '2026-10-19')!.status).toBe('active')
+  })
+})
+
+describe('cel dzienny i odznaki', () => {
+  it('minuty liczone z lekcji danej persony z dzisiaj', () => {
+    const ev = (persona: string, ts: string, durationSec: number) => ({ ts, persona, name: 'lesson_completed', props: { durationSec } })
+    const events = [ev('kuba', '2026-10-20T09:00:00', 200), ev('kuba', '2026-10-20T11:00:00', 160), ev('kuba', '2026-10-19T11:00:00', 600), ev('zosia', '2026-10-20T11:00:00', 600)]
+    expect(r.minutesToday(events, 'kuba', '2026-10-20')).toBe(6)
+  })
+
+  it('odznaki za serię i XP odblokowują się same, „ręczne” tylko z danych', async () => {
+    const { badges } = await import('./content')
+    const unlocked = (id: string) => badges.filter((b) => r.isBadgeUnlocked(persona(id), b)).map((b) => b.id)
+    expect(unlocked('zosia')).toEqual(['streak-7', 'streak-30', 'streak-365', 'xp-1000', 'xp-10000', 'league-gold'])
+    expect(unlocked('kuba')).toEqual([])
+  })
+})

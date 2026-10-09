@@ -1,0 +1,8 @@
+[
+  { "id": "streak-7", "title": "Tydzień serii", "icon": "🔥", "rule": { "kind": "streak", "value": 7 } },
+  { "id": "streak-30", "title": "Miesiąc serii", "icon": "📅", "rule": { "kind": "streak", "value": 30 } },
+  { "id": "streak-365", "title": "Rok serii", "icon": "🏅", "rule": { "kind": "streak", "value": 365 } },
+  { "id": "xp-1000", "title": "1000 XP", "icon": "⚡", "rule": { "kind": "xp", "value": 1000 } },
+  { "id": "xp-10000", "title": "10 000 XP", "icon": "💎", "rule": { "kind": "xp", "value": 10000 } },
+  { "id": "league-gold", "title": "Złota liga", "icon": "🏆", "rule": { "kind": "manual" } }
+]

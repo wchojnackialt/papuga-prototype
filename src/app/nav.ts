@@ -11,6 +11,7 @@ export type Screen =
   | { name: 'lessonEnd'; summary: LessonSummary }
   | { name: 'chest'; xp: number }
   | { name: 'ad' }
+  | { name: 'streak' }
   | { name: 'paywall'; trigger: 'hearts' | 'streak_freeze' | 'profile_banner' }
 
 type Nav = {

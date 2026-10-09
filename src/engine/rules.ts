@@ -1,5 +1,5 @@
-import { addDays, diffDays, isoWeekday, toDayKey, weekStart, type DayKey } from './dates'
-import { leagueTiers, type Course, type League, type LeagueTier, type Plan, type Quest, type UserState } from './schema'
+import { addDays, diffDays, fromDayKey, isoWeekday, toDayKey, weekStart, type DayKey } from './dates'
+import { leagueTiers, type Badge, type Course, type League, type LeagueTier, type Plan, type Quest, type TrackedEvent, type UserState } from './schema'
 
 // Reguły gry (PRD §5) jako czyste funkcje: dostają stan i czas, zwracają nowy stan i zdarzenia do dziennika.
 // Ekrany ich nie obchodzą, a testy sprawdzają je bez interfejsu.
@@ -143,6 +143,63 @@ export function rollStreak(s: UserState, today: DayKey): RuleResult {
 /** Modal „Twoja seria jest zagrożona!” (PRD §4.6): dziś bez lekcji i po 18:00. */
 export function isStreakAtRisk(s: UserState, now: Date): boolean {
   return s.streak.current > 0 && s.streak.lastActiveDate !== toDayKey(now) && now.getHours() >= RULES.streakReminderHour
+}
+
+export type CalendarDay = { day: DayKey; status: 'active' | 'frozen' | 'missed' | 'future' | 'none'; today: boolean }
+
+/**
+ * Kalendarz miesiąca serii (PRD §4.6). Dni aktywne wynikają z bieżącej serii (ostatnie `current` dni do
+ * `lastActiveDate`, bez dni zamrożonych). Pominięte = minione dni od dołączenia, które nie są ani aktywne, ani zamrożone.
+ */
+export function streakCalendar(s: UserState, month: DayKey, today: DayKey): CalendarDay[] {
+  const first = fromDayKey(month)
+  first.setDate(1)
+  const start = toDayKey(first)
+  const length = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate()
+
+  const active = new Set<DayKey>()
+  const frozen = new Set(s.streak.frozenDates)
+  if (s.streak.lastActiveDate && s.streak.current > 0) {
+    let left = s.streak.current
+    for (let d = s.streak.lastActiveDate; left > 0; d = addDays(d, -1)) {
+      if (frozen.has(d)) continue
+      active.add(d)
+      left -= 1
+    }
+  }
+
+  return Array.from({ length }, (_, i) => {
+    const day = addDays(start, i)
+    const status: CalendarDay['status'] =
+      active.has(day) ? 'active'
+      : frozen.has(day) ? 'frozen'
+      : diffDays(day, today) <= 0 ? 'future'
+      : diffDays(s.profile.joinedAt, day) < 0 ? 'none'
+      : 'missed'
+    return { day, status, today: day === today }
+  })
+}
+
+// ── Cel dzienny i odznaki ───────────────────────────────────────────────
+
+/** Minuty nauki dziś, z czasu trwania ukończonych lekcji w dzienniku (cel dzienny w Zadaniach, PRD §5). */
+export function minutesToday(events: TrackedEvent[], persona: string, today: DayKey): number {
+  const sec = events
+    .filter((e) => e.persona === persona && e.name === 'lesson_completed' && toDayKey(new Date(e.ts)) === today)
+    .reduce((sum, e) => sum + Number(e.props?.durationSec ?? 0), 0)
+  return Math.round(sec / 60)
+}
+
+export function isBadgeUnlocked(s: UserState, badge: Badge): boolean {
+  if (s.badges.includes(badge.id)) return true
+  switch (badge.rule.kind) {
+    case 'streak':
+      return s.streak.longest >= badge.rule.value
+    case 'xp':
+      return s.xp.total >= badge.rule.value
+    case 'manual':
+      return false
+  }
 }
 
 // ── Liga ────────────────────────────────────────────────────────────────

@@ -1,27 +1,59 @@
+import { useState } from 'react'
 import { BottomNav } from './app/BottomNav'
 import { useNav } from './app/nav'
 import { PhoneFrame } from './app/PhoneFrame'
 import { TopBar } from './app/TopBar'
 import { useAppOpen } from './app/useAppOpen'
-import { navItems } from './config/nav.config'
+import { HeartsInfoModal } from './components/HeartsInfoModal'
 import { useStore } from './engine/store'
 import { AdScreen } from './screens/AdScreen'
-import { ComingSoon } from './screens/ComingSoon'
+import { LeagueScreen } from './screens/LeagueScreen'
 import { ChestScreen, LessonEndScreen } from './screens/LessonEndScreen'
 import { LessonScreen } from './screens/LessonScreen'
+import { OnboardingScreen } from './screens/OnboardingScreen'
 import { PathScreen } from './screens/PathScreen'
 import { PaywallScreen } from './screens/PaywallScreen'
+import { ProfileScreen } from './screens/ProfileScreen'
+import { QuestsScreen } from './screens/QuestsScreen'
+import { openPaywall } from './screens/startLesson'
+import { StreakScreen } from './screens/StreakScreen'
+
+const tabScreens: Record<string, () => React.JSX.Element> = {
+  path: PathScreen,
+  league: LeagueScreen,
+  quests: QuestsScreen,
+  profile: ProfileScreen,
+}
 
 function Tabs() {
   const user = useStore((s) => s.user)
-  const { tab, setTab } = useNav()
+  const { tab, setTab, go } = useNav()
+  const [hearts, setHearts] = useState(false)
+  const Screen = tabScreens[tab] ?? PathScreen
   return (
     <>
-      <TopBar streak={user.streak.current} xp={user.xp.total} hearts={user.hearts} />
+      <TopBar
+        streak={user.streak.current}
+        xp={user.xp.total}
+        hearts={user.hearts}
+        onStat={(kind) => {
+          if (kind === 'streak') go({ name: 'streak' })
+          if (kind === 'xp') setTab('league')
+          if (kind === 'hearts') setHearts(true)
+        }}
+      />
       <main key={tab} className="animate-screen flex flex-1 flex-col overflow-y-auto">
-        {tab === 'path' ? <PathScreen /> : <ComingSoon title={navItems.find((n) => n.id === tab)?.label ?? ''} />}
+        <Screen />
       </main>
       <BottomNav active={tab} onChange={setTab} />
+      <HeartsInfoModal
+        open={hearts}
+        onClose={() => setHearts(false)}
+        onPlus={() => {
+          setHearts(false)
+          openPaywall('hearts')
+        }}
+      />
     </>
   )
 }
@@ -29,15 +61,23 @@ function Tabs() {
 export default function App() {
   useAppOpen()
   const screen = useNav((s) => s.screen)
-  // Lekcja, nagroda, reklama i paywall przejmują cały ekran: bez dolnego paska (DESIGN.md §4).
+  const onboarded = useStore((s) => s.user.onboarded)
+  // Lekcja, nagroda, reklama, seria i paywall przejmują cały ekran: bez dolnego paska (DESIGN.md §4).
   return (
     <PhoneFrame>
-      {screen.name === 'tabs' && <Tabs />}
-      {screen.name === 'lesson' && <LessonScreen key={screen.run} lessonId={screen.lessonId} />}
-      {screen.name === 'lessonEnd' && <LessonEndScreen summary={screen.summary} />}
-      {screen.name === 'chest' && <ChestScreen xp={screen.xp} />}
-      {screen.name === 'ad' && <AdScreen />}
-      {screen.name === 'paywall' && <PaywallScreen />}
+      {!onboarded ? (
+        <OnboardingScreen />
+      ) : (
+        <>
+          {screen.name === 'tabs' && <Tabs />}
+          {screen.name === 'lesson' && <LessonScreen key={screen.run} lessonId={screen.lessonId} />}
+          {screen.name === 'lessonEnd' && <LessonEndScreen summary={screen.summary} />}
+          {screen.name === 'chest' && <ChestScreen xp={screen.xp} />}
+          {screen.name === 'ad' && <AdScreen />}
+          {screen.name === 'streak' && <StreakScreen />}
+          {screen.name === 'paywall' && <PaywallScreen />}
+        </>
+      )}
     </PhoneFrame>
   )
 }

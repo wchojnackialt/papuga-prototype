@@ -87,6 +87,21 @@ export const leagueSchema = z.object({
 
 export type League = z.infer<typeof leagueSchema>
 
+// ── Odznaki (PRD §4.8): wszystkie za wysiłek, żadna za umiejętność (as-is) ──
+
+export const badgeSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  icon: z.string(),
+  rule: z.discriminatedUnion('kind', [
+    z.object({ kind: z.literal('streak'), value: z.number().int().positive() }),
+    z.object({ kind: z.literal('xp'), value: z.number().int().positive() }),
+    z.object({ kind: z.literal('manual') }),
+  ]),
+})
+
+export type Badge = z.infer<typeof badgeSchema>
+
 // ── Stan użytkownika (PRD §6.4) ─────────────────────────────────────────
 
 export const goals = ['school', 'test', 'work', 'travel', 'self'] as const
