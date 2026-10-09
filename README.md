@@ -2,6 +2,8 @@
 
 Klikalny prototyp obecnej wersji aplikacji Papuga (fikcyjna marka) do case study Supercharge 3.
 
+**Wersja online:** https://papuga-prototype.vercel.app (Vercel, wdraża się automatycznie z gałęzi `main`).
+
 ## Uruchomienie
 
 Wymaga Node 20+.
