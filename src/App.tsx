@@ -4,7 +4,9 @@ import { useNav } from './app/nav'
 import { PhoneFrame } from './app/PhoneFrame'
 import { TopBar } from './app/TopBar'
 import { useAppOpen } from './app/useAppOpen'
+import { useClockVersion } from './app/useClock'
 import { HeartsInfoModal } from './components/HeartsInfoModal'
+import { DevPanel } from './dev/DevPanel'
 import { useStore } from './engine/store'
 import { AdScreen } from './screens/AdScreen'
 import { LeagueScreen } from './screens/LeagueScreen'
@@ -60,24 +62,28 @@ function Tabs() {
 
 export default function App() {
   useAppOpen()
+  useClockVersion()
   const screen = useNav((s) => s.screen)
   const onboarded = useStore((s) => s.user.onboarded)
   // Lekcja, nagroda, reklama, seria i paywall przejmują cały ekran: bez dolnego paska (DESIGN.md §4).
   return (
-    <PhoneFrame>
-      {!onboarded ? (
-        <OnboardingScreen />
-      ) : (
-        <>
-          {screen.name === 'tabs' && <Tabs />}
-          {screen.name === 'lesson' && <LessonScreen key={screen.run} lessonId={screen.lessonId} />}
-          {screen.name === 'lessonEnd' && <LessonEndScreen summary={screen.summary} />}
-          {screen.name === 'chest' && <ChestScreen xp={screen.xp} />}
-          {screen.name === 'ad' && <AdScreen />}
-          {screen.name === 'streak' && <StreakScreen />}
-          {screen.name === 'paywall' && <PaywallScreen />}
-        </>
-      )}
-    </PhoneFrame>
+    <>
+      <PhoneFrame>
+        {!onboarded ? (
+          <OnboardingScreen />
+        ) : (
+          <>
+            {screen.name === 'tabs' && <Tabs />}
+            {screen.name === 'lesson' && <LessonScreen key={screen.run} lessonId={screen.lessonId} />}
+            {screen.name === 'lessonEnd' && <LessonEndScreen summary={screen.summary} />}
+            {screen.name === 'chest' && <ChestScreen xp={screen.xp} />}
+            {screen.name === 'ad' && <AdScreen />}
+            {screen.name === 'streak' && <StreakScreen />}
+            {screen.name === 'paywall' && <PaywallScreen />}
+          </>
+        )}
+      </PhoneFrame>
+      <DevPanel />
+    </>
   )
 }

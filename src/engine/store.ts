@@ -28,6 +28,8 @@ type Store = {
   appOpened: () => void
   switchPersona: (persona: string) => void
   resetPersona: () => void
+  /** Czyści wszystkie persony, dziennik i zegar (panel prowadzącego). */
+  resetAll: () => void
   clearEvents: () => void
 
   completeOnboarding: (answers: Parameters<typeof rules.completeOnboarding>[1]) => void
@@ -77,6 +79,14 @@ export const useStore = create<Store>((set, get) => {
       const { persona } = get().user
       storage.remove(stateKey(persona))
       set({ user: seed(persona) })
+      get().appOpened()
+    },
+
+    resetAll() {
+      for (const persona of Object.keys(personaSeeds)) storage.remove(stateKey(persona))
+      storage.remove(EVENTS_KEY)
+      clock.reset()
+      set({ user: seed(get().user.persona), events: [] })
       get().appOpened()
     },
 

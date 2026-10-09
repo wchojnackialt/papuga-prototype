@@ -17,6 +17,9 @@ Vite + React + TypeScript + Tailwind 3 + Phosphor Icons (Bold) + Zustand + Zod +
 - `npm run build` — typecheck + build
 - `npm test` — testy (Vitest)
 - `npm run lint` — oxlint
+- `npm run validate` — kontrola treści ćwiczeń; `npm run content:review` — arkusz przeglądu treści
+
+Panel prowadzącego: `Shift + D` (`src/dev/DevPanel.tsx`). Zmiana symulowanego czasu = otwarcie aplikacji o tej porze.
 
 ## Zasady w kodzie
 

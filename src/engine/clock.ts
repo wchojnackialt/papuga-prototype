@@ -10,6 +10,7 @@ export const DEFAULT_SIM_START = '2026-10-20T10:00:00' // dzień startu programu
 type ClockState = { base: number; setAt: number }
 
 let state: ClockState = load()
+let version = 0 // zmienia się przy każdym ustawieniu zegara (dla useSyncExternalStore)
 const listeners = new Set<() => void>()
 
 function load(): ClockState {
@@ -27,6 +28,7 @@ export const clock = {
   set(date: Date) {
     state = { base: date.getTime(), setAt: Date.now() }
     storage.setJSON(KEY, state)
+    version += 1
     listeners.forEach((l) => l())
   },
   advance(ms: number) {
@@ -37,6 +39,9 @@ export const clock = {
   },
   subscribe(listener: () => void) {
     listeners.add(listener)
-    return () => listeners.delete(listener)
+    return () => {
+      listeners.delete(listener)
+    }
   },
+  version: () => version,
 }
