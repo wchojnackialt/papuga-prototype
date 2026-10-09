@@ -34,6 +34,8 @@ body {
   .press-sm { box-shadow: var(--shadow-sm); transition: transform 120ms var(--ease), box-shadow 120ms var(--ease); }
   .press-sm:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: none; }
   .text-label-caps { @apply font-body text-label font-bold uppercase; }
+  /* Kontur tuszu wokół wypełnionej ikony: jasne ikony (XP, płomień, puste serce) mają kontrast ≥ 3:1 na papierze. */
+  .icon-ink { filter: drop-shadow(1px 0 0 var(--ink)) drop-shadow(-1px 0 0 var(--ink)) drop-shadow(0 1px 0 var(--ink)) drop-shadow(0 -1px 0 var(--ink)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

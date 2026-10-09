@@ -15,7 +15,7 @@ export function HeartsInfoModal({ open, onClose, onPlus }: { open: boolean; onCl
     <Modal open={open} onClose={onClose} title={plus ? 'Nielimitowane serca' : 'Serca'}>
       <div className="mb-4 flex justify-center gap-1" aria-label={plus ? 'Bez limitu' : `${user.hearts} z ${RULES.maxHearts}`}>
         {Array.from({ length: RULES.maxHearts }, (_, i) => (
-          <Heart key={i} size={32} weight="fill" className={plus || i < (user.hearts ?? 0) ? 'text-heart' : 'text-locked'} aria-hidden />
+          <Heart key={i} size={32} weight="fill" className={`icon-ink ${plus || i < (user.hearts ?? 0) ? 'text-heart' : 'text-locked'}`} aria-hidden />
         ))}
       </div>
       <p className="mb-5 text-body">

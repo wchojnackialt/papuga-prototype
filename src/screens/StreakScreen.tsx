@@ -43,7 +43,7 @@ export function StreakScreen() {
       <ScreenHeader onBack={home} title="Seria" />
       <div className="px-4 pb-8">
         <section className="sticker flex items-center gap-4 rounded-md bg-coral-soft p-5 shadow-st-lg">
-          <Fire size={64} weight="fill" className={user.streak.current > 0 ? 'text-flame' : 'text-locked'} aria-hidden />
+          <Fire size={64} weight="fill" className={`icon-ink ${user.streak.current > 0 ? 'text-flame' : 'text-locked'}`} aria-hidden />
           <div>
             <p className="font-head text-display">{formatNumber(user.streak.current)}</p>
             <p className="font-bold">{daysWord(user.streak.current)} serii</p>

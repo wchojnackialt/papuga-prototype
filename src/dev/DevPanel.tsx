@@ -7,7 +7,7 @@ import { heartsRefillAt } from '../engine/rules'
 import { useStore } from '../engine/store'
 
 // Panel prowadzącego (PRD §4.10). Celowo poza światem marki: styl techniczny, monospace (DESIGN.md §5 DevPanel).
-// Otwierany Shift + D albo ikoną w rogu, poza ramką telefonu.
+// Otwierany Shift + D albo ikoną w rogu, poza ramką telefonu (na telefonie bez ikony, żeby nie zasłaniała nawigacji).
 
 const pad = (n: number) => String(n).padStart(2, '0')
 const toLocalInput = (d: Date) => `${toDayKey(d)}T${pad(d.getHours())}:${pad(d.getMinutes())}`
@@ -121,7 +121,7 @@ export function DevPanel() {
         aria-label={open ? 'Zamknij panel prowadzącego' : 'Otwórz panel prowadzącego (Shift + D)'}
         title="Panel prowadzącego (Shift + D)"
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-3 right-3 z-50 rounded border border-white/30 bg-black/60 px-2 py-1 font-mono text-[11px] text-white/80 hover:bg-black/80"
+        className="fixed bottom-3 right-3 z-50 hidden rounded border sm:block border-white/30 bg-black/60 px-2 py-1 font-mono text-[11px] text-white/80 hover:bg-black/80"
       >
         DEV
       </button>

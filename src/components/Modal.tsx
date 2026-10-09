@@ -11,12 +11,31 @@ type Props = {
 export function Modal({ open, onClose, title, children }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
+  // Fokus w oknie, Tab krąży tylko po jego przyciskach, Esc zamyka, po zamknięciu fokus wraca na poprzedni element.
   useEffect(() => {
     if (!open) return
-    ref.current?.focus()
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose?.()
+    const previous = document.activeElement as HTMLElement | null
+    ref.current?.focus({ preventScroll: true })
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') return onClose?.()
+      if (e.key !== 'Tab' || !ref.current) return
+      const items = [...ref.current.querySelectorAll<HTMLElement>('button:not(:disabled), [href], input, textarea')]
+      if (!items.length) return
+      const first = items[0]
+      const last = items[items.length - 1]
+      if (e.shiftKey && (document.activeElement === first || document.activeElement === ref.current)) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      previous?.focus?.({ preventScroll: true })
+    }
   }, [open, onClose])
 
   if (!open) return null

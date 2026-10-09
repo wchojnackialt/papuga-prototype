@@ -21,7 +21,7 @@ function StatCard({ kind, value, delay }: Stat & { delay: number }) {
     <div className={`sticker flex flex-1 flex-col items-center gap-1 rounded-md p-3 shadow-st-md ${bg}`}>
       <span className="text-label-caps">{label}</span>
       <span className="flex items-center gap-1 font-head text-stat">
-        <Icon size={20} weight="fill" className={kind === 'streak' ? 'text-flame' : ''} aria-hidden />
+        <Icon size={20} weight="fill" className={kind === 'streak' ? 'icon-ink text-flame' : ''} aria-hidden />
         {prefix}
         {formatNumber(shown)}
         {suffix}

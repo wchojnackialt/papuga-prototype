@@ -28,7 +28,7 @@ export function StatChip({ kind, value, onClick }: Props) {
       className="flex min-h-[44px] items-center gap-1 rounded-sm px-2 font-head text-stat
         hover:bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-lavender"
     >
-      <Icon weight="fill" size={24} className={color} aria-hidden />
+      <Icon weight="fill" size={24} className={`${color} icon-ink`} aria-hidden />
       <span>{shown}</span>
     </button>
   )

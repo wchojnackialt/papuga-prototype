@@ -14,7 +14,7 @@ export function HeartsEmptyModal({ open, onPlus, onWait }: { open: boolean; onPl
     <Modal open={open} onClose={onWait} title="Skończyły Ci się serca">
       <div className="mb-4 flex justify-center gap-1" aria-hidden>
         {Array.from({ length: 5 }, (_, i) => (
-          <Heart key={i} size={32} weight="fill" className="text-locked" />
+          <Heart key={i} size={32} weight="fill" className="icon-ink text-locked" />
         ))}
       </div>
       <p className="mb-5 text-body">

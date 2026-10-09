@@ -27,7 +27,7 @@ export function AdScreen() {
   }
 
   return (
-    <div className="relative flex flex-1 flex-col items-center justify-center bg-gradient-to-b from-[#1e3a8a] to-[#0ea5e9] p-8 text-center text-white">
+    <div className="relative flex flex-1 flex-col items-center justify-center bg-gradient-to-b from-[#1e3a8a] to-[#0369a1] p-8 text-center text-white">
       <span className="absolute left-3 top-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-bold">Reklama</span>
       {left > 0 ? (
         <span className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-small font-bold" aria-live="polite">
