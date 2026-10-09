@@ -40,3 +40,36 @@ describe('store', () => {
     expect(s().user.xp.total).toBe(15)
   })
 })
+
+describe('przypomnienie o serii', () => {
+  beforeEach(() => {
+    clock.reset()
+    s().clearEvents()
+  })
+
+  it('po 18:00 bez dzisiejszej lekcji: modal i zdarzenie streak_reminder_shown', () => {
+    s().switchPersona('kuba')
+    s().resetPersona()
+    expect(s().streakReminder).toBe(false) // 10:00
+    clock.set(new Date('2026-10-20T18:30:00'))
+    s().appOpened()
+    expect(s().streakReminder).toBe(true)
+    expect(s().events.at(-1)).toMatchObject({ name: 'streak_reminder_shown', props: { hour: 18 } })
+  })
+
+  it('po dzisiejszej lekcji: bez modala', () => {
+    s().switchPersona('kuba')
+    s().resetPersona()
+    s().completeLesson('u1-l3', 0)
+    clock.set(new Date('2026-10-20T19:00:00'))
+    s().appOpened()
+    expect(s().streakReminder).toBe(false)
+  })
+
+  it('nowy użytkownik bez serii: bez modala', () => {
+    s().switchPersona('new')
+    clock.set(new Date('2026-10-20T20:00:00'))
+    s().appOpened()
+    expect(s().streakReminder).toBe(false)
+  })
+})

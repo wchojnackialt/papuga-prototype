@@ -23,6 +23,8 @@ function loadUser(persona: string): UserState {
 type Store = {
   user: UserState
   events: TrackedEvent[]
+  /** Modal „Twoja seria jest zagrożona!” do pokazania po otwarciu aplikacji (PRD §4.6). */
+  streakReminder: boolean
 
   track: (name: string, props?: Record<string, unknown>) => void
   appOpened: () => void
@@ -31,6 +33,7 @@ type Store = {
   /** Czyści wszystkie persony, dziennik i zegar (panel prowadzącego). */
   resetAll: () => void
   clearEvents: () => void
+  dismissStreakReminder: () => void
 
   completeOnboarding: (answers: Parameters<typeof rules.completeOnboarding>[1]) => void
   completeLesson: (lessonId: string, mistakes: number) => number
@@ -56,6 +59,7 @@ export const useStore = create<Store>((set, get) => {
   return {
     user: loadUser(initialPersona),
     events: storage.getJSON<TrackedEvent[]>(EVENTS_KEY) ?? [],
+    streakReminder: false,
 
     track(name, props) {
       const event: TrackedEvent = { ts: clock.now().toISOString(), persona: get().user.persona, name, ...(props && { props }) }
@@ -67,6 +71,14 @@ export const useStore = create<Store>((set, get) => {
     appOpened() {
       get().track('app_opened')
       apply(rules.onAppOpen(get().user, clock.now(), league))
+      const now = clock.now()
+      const remind = get().user.onboarded && rules.isStreakAtRisk(get().user, now)
+      set({ streakReminder: remind })
+      if (remind) get().track('streak_reminder_shown', { hour: now.getHours() })
+    },
+
+    dismissStreakReminder() {
+      set({ streakReminder: false })
     },
 
     switchPersona(persona) {

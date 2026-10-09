@@ -6,6 +6,7 @@ import { TopBar } from './app/TopBar'
 import { useAppOpen } from './app/useAppOpen'
 import { useClockVersion } from './app/useClock'
 import { HeartsInfoModal } from './components/HeartsInfoModal'
+import { StreakRiskModal } from './components/StreakRiskModal'
 import { DevPanel } from './dev/DevPanel'
 import { useStore } from './engine/store'
 import { AdScreen } from './screens/AdScreen'
@@ -48,6 +49,7 @@ function Tabs() {
         <Screen />
       </main>
       <BottomNav active={tab} onChange={setTab} />
+      <StreakRiskModal />
       <HeartsInfoModal
         open={hearts}
         onClose={() => setHearts(false)}
