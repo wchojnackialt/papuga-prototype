@@ -14,7 +14,7 @@ describe('store', () => {
     s().switchPersona('zosia')
     expect(s().user.streak.current).toBe(412)
     s().switchPersona('kuba')
-    expect(s().user.hearts).toBe(2)
+    expect(s().user.hearts).toBe(0)
     expect(s().events.map((e) => [e.persona, e.name])).toEqual([
       ['zosia', 'app_opened'],
       ['kuba', 'app_opened'],
@@ -23,12 +23,13 @@ describe('store', () => {
 
   it('każda persona pamięta własny stan, reset przywraca dane startowe', () => {
     s().switchPersona('kuba')
+    s().refillHearts()
     s().loseHeart()
     s().switchPersona('zosia')
     s().switchPersona('kuba')
-    expect(s().user.hearts).toBe(1)
+    expect(s().user.hearts).toBe(4)
     s().resetPersona()
-    expect(s().user.hearts).toBe(2)
+    expect(s().user.hearts).toBe(0)
   })
 
   it('lekcja zapisuje zdarzenia z reguł', () => {

@@ -112,7 +112,7 @@ describe('seria', () => {
 
 describe('serca', () => {
   it('plan darmowy: −1 za błąd, przy 0 zdarzenie hearts_depleted', () => {
-    const one = r.loseHeart(persona('kuba'), at('2026-10-20T10:00:00'))
+    const one = r.loseHeart({ ...persona('kuba'), hearts: 2 }, at('2026-10-20T10:00:00'))
     expect(one.state.hearts).toBe(1)
     expect(one.events).toEqual([{ name: 'heart_lost', props: { heartsLeft: 1 } }])
     const zero = r.loseHeart(one.state, at('2026-10-20T10:01:00'))
@@ -128,8 +128,8 @@ describe('serca', () => {
   })
 
   it('odnowienie do pełna 4 h po ostatniej utracie', () => {
-    const kuba = persona('kuba') // stracił serce o 9:15
-    expect(r.refillHearts(kuba, at('2026-10-20T13:14:00')).hearts).toBe(2)
+    const kuba = persona('kuba') // stracił ostatnie serce o 9:15
+    expect(r.refillHearts(kuba, at('2026-10-20T13:14:00')).hearts).toBe(0)
     expect(r.refillHearts(kuba, at('2026-10-20T13:15:00')).hearts).toBe(5)
   })
 })
@@ -184,10 +184,10 @@ describe('zadania dnia', () => {
 })
 
 describe('otwarcie aplikacji', () => {
-  it('Kuba 20.10 o 10:00: seria i 2 serca bez zmian', () => {
+  it('Kuba 20.10 o 10:00: seria bez zmian, 0 serc', () => {
     const { state, events } = r.onAppOpen(persona('kuba'), at('2026-10-20T10:00:00'), league)
     expect(state.streak.current).toBe(3)
-    expect(state.hearts).toBe(2)
+    expect(state.hearts).toBe(0)
     expect(events).toEqual([])
   })
 })

@@ -5,7 +5,7 @@ import { validateContent, validateExercise } from './validateContent'
 describe('dane', () => {
   it('persony: Kuba, Zosia i nowy użytkownik', () => {
     expect(personaIds).toEqual(['kuba', 'zosia', 'new'])
-    expect(personaSeeds.kuba.hearts).toBe(2)
+    expect(personaSeeds.kuba.hearts).toBe(0)
     expect(personaSeeds.zosia.hearts).toBeNull()
   })
 
