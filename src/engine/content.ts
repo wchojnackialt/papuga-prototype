@@ -1,8 +1,20 @@
 import badgesJson from '../data/badges.json'
+import classJson from '../data/class.json'
 import courseJson from '../data/course.json'
 import exercisesJson from '../data/exercises.json'
 import leagueJson from '../data/league.json'
-import { badgeSchema, courseSchema, exerciseSchema, leagueSchema, userStateSchema, type Exercise, type UserState } from './schema'
+import photoSampleJson from '../data/photo-sample.json'
+import {
+  badgeSchema,
+  classroomSchema,
+  courseSchema,
+  exerciseSchema,
+  leagueSchema,
+  photoSampleSchema,
+  userStateSchema,
+  type Exercise,
+  type UserState,
+} from './schema'
 
 // Wczytanie treści z JSON z walidacją: błąd w danych wychodzi od razu przy starcie, a nie w połowie lekcji.
 
@@ -10,6 +22,10 @@ export const course = courseSchema.parse(courseJson)
 export const exercises = exerciseSchema.array().parse(exercisesJson)
 export const league = leagueSchema.parse(leagueJson)
 export const badges = badgeSchema.array().parse(badgesJson)
+/** Symulowana klasa (prototyp bez serwera): koledzy i ich zestawy. */
+export const classroom = classroomSchema.parse(classJson)
+/** Symulowany wynik rozpoznania zdjęcia strony z podręcznika. */
+export const photoSample = photoSampleSchema.parse(photoSampleJson)
 
 const seeds = import.meta.glob('../data/personas/*.json', { eager: true, import: 'default' })
 

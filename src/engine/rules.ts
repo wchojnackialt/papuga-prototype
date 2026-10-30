@@ -84,6 +84,16 @@ export function completeLesson(
   return { state, events: streak.events, xpGained }
 }
 
+/** Sesja z zestawu słówek: liczy się do serii, ale bez XP, zadań dnia i serc (PRD §9.4). */
+export function completeListPractice(
+  s: UserState,
+  args: { answers: { key: string; correct: boolean }[]; today: DayKey },
+): RuleResult {
+  const wordProgress = { ...s.wordProgress }
+  for (const { key, correct } of args.answers) wordProgress[key] = correct ? (wordProgress[key] ?? 0) + 1 : 0
+  return extendStreak({ ...s, wordProgress }, args.today)
+}
+
 export function openChest(s: UserState, args: { chestId: string; today: DayKey; course: Course }): RuleResult & { xpGained: number } {
   const xpGained = RULES.chestXp
   let state: UserState = { ...s, xp: addXp(s, xpGained), progress: markDone(s, args.course, args.chestId) }

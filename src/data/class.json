@@ -1,0 +1,219 @@
+{
+  "id": "ang-7b",
+  "name": "Angielski 7B",
+  "code": "KOT-7B",
+  "members": [
+    {
+      "id": "m1",
+      "name": "Majka",
+      "avatar": "🦊"
+    },
+    {
+      "id": "m2",
+      "name": "fox_77",
+      "avatar": "🐺"
+    },
+    {
+      "id": "m3",
+      "name": "Mewa",
+      "avatar": "🐦"
+    },
+    {
+      "id": "m4",
+      "name": "Bartek.k",
+      "avatar": "🐸"
+    },
+    {
+      "id": "m5",
+      "name": "zielona_herbata",
+      "avatar": "🍵"
+    },
+    {
+      "id": "m6",
+      "name": "Tymek",
+      "avatar": "🐙"
+    }
+  ],
+  "lists": [
+    {
+      "id": "class-unit3",
+      "name": "Unit 3 na piątek",
+      "authorId": "m1",
+      "testDate": "2026-10-23",
+      "createdAt": "2026-10-19",
+      "shared": true,
+      "words": [
+        {
+          "id": "w01",
+          "en": "friendly",
+          "pl": "przyjazny"
+        },
+        {
+          "id": "w02",
+          "en": "shy",
+          "pl": "nieśmiały"
+        },
+        {
+          "id": "w03",
+          "en": "lazy",
+          "pl": "leniwy"
+        },
+        {
+          "id": "w04",
+          "en": "generous",
+          "pl": "hojny"
+        },
+        {
+          "id": "w05",
+          "en": "selfish",
+          "pl": "samolubny"
+        },
+        {
+          "id": "w06",
+          "en": "honest",
+          "pl": "uczciwy"
+        },
+        {
+          "id": "w07",
+          "en": "polite",
+          "pl": "uprzejmy"
+        },
+        {
+          "id": "w08",
+          "en": "rude",
+          "pl": "niegrzeczny"
+        },
+        {
+          "id": "w09",
+          "en": "brave",
+          "pl": "odważny"
+        },
+        {
+          "id": "w10",
+          "en": "talkative",
+          "pl": "rozmowny"
+        },
+        {
+          "id": "w11",
+          "en": "moody",
+          "pl": "humorzasty"
+        },
+        {
+          "id": "w12",
+          "en": "curious",
+          "pl": "ciekawski"
+        }
+      ]
+    },
+    {
+      "id": "class-verbs",
+      "name": "Czasowniki nieregularne cz. 2",
+      "authorId": "m2",
+      "testDate": "2026-10-30",
+      "createdAt": "2026-10-17",
+      "shared": true,
+      "words": [
+        {
+          "id": "w01",
+          "en": "forget",
+          "pl": "zapomnieć"
+        },
+        {
+          "id": "w02",
+          "en": "choose",
+          "pl": "wybrać"
+        },
+        {
+          "id": "w03",
+          "en": "bring",
+          "pl": "przynieść"
+        },
+        {
+          "id": "w04",
+          "en": "catch",
+          "pl": "złapać"
+        },
+        {
+          "id": "w05",
+          "en": "teach",
+          "pl": "uczyć kogoś"
+        },
+        {
+          "id": "w06",
+          "en": "throw",
+          "pl": "rzucić"
+        },
+        {
+          "id": "w07",
+          "en": "steal",
+          "pl": "ukraść"
+        },
+        {
+          "id": "w08",
+          "en": "hide",
+          "pl": "schować"
+        },
+        {
+          "id": "w09",
+          "en": "lend",
+          "pl": "pożyczyć komuś"
+        },
+        {
+          "id": "w10",
+          "en": "spend",
+          "pl": "wydać"
+        }
+      ]
+    },
+    {
+      "id": "class-food",
+      "name": "Food & drinks",
+      "authorId": "m3",
+      "testDate": null,
+      "createdAt": "2026-10-12",
+      "shared": true,
+      "words": [
+        {
+          "id": "w01",
+          "en": "cucumber",
+          "pl": "ogórek"
+        },
+        {
+          "id": "w02",
+          "en": "pear",
+          "pl": "gruszka"
+        },
+        {
+          "id": "w03",
+          "en": "flour",
+          "pl": "mąka"
+        },
+        {
+          "id": "w04",
+          "en": "salty",
+          "pl": "słony"
+        },
+        {
+          "id": "w05",
+          "en": "sweet",
+          "pl": "słodki"
+        },
+        {
+          "id": "w06",
+          "en": "boil",
+          "pl": "gotować"
+        },
+        {
+          "id": "w07",
+          "en": "fry",
+          "pl": "smażyć"
+        },
+        {
+          "id": "w08",
+          "en": "menu",
+          "pl": "karta dań"
+        }
+      ]
+    }
+  ]
+}

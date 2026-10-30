@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { useNav } from '../app/nav'
 import { clock, DEFAULT_SIM_START } from '../engine/clock'
-import { personaIds, personaSeeds } from '../engine/content'
+import { classroom, personaIds, personaSeeds } from '../engine/content'
 import { addDays, toDayKey } from '../engine/dates'
 import { heartsRefillAt } from '../engine/rules'
 import { useStore } from '../engine/store'
@@ -81,7 +81,7 @@ export function DevPanel() {
   const [, tick] = useState(0)
   const user = useStore((s) => s.user)
   const events = useStore((s) => s.events)
-  const { switchPersona, resetPersona, resetAll, refillHearts, clearEvents } = useStore.getState()
+  const { switchPersona, resetPersona, resetAll, refillHearts, clearEvents, setParentConsent, joinClass, leaveClass } = useStore.getState()
   const now = clock.now()
   const [input, setInput] = useState(() => toLocalInput(now))
   const go = (date: Date) => {
@@ -209,6 +209,25 @@ export function DevPanel() {
               <Btn onClick={refillHearts}>Odnów serca</Btn>
               <ConfirmBtn label="Reset persony" onConfirm={() => (resetPersona(), useNav.setState({ tab: 'path', screen: { name: 'tabs' } }))} />
               <ConfirmBtn label="Reset wszystkiego" onConfirm={() => (resetAll(), setInput(toLocalInput(clock.now())), useNav.setState({ tab: 'path', screen: { name: 'tabs' } }))} />
+            </div>
+          </Section>
+
+          <Section title="Moje listy i klasa">
+            <dl className="mb-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 text-white/70">
+              <dt>zestawy</dt>
+              <dd>{user.wordLists.length}</dd>
+              <dt>klasa</dt>
+              <dd>
+                {user.classroom.joinedId ?? '—'} (kod: <strong className="text-sun">{classroom.code}</strong>)
+              </dd>
+              <dt>zgoda</dt>
+              <dd>{user.classroom.parentConsent ? 'rodzic się zgodził' : 'brak'} (wymagana poniżej 16 lat)</dd>
+            </dl>
+            <div className="flex flex-wrap gap-2">
+              <Btn active={user.classroom.parentConsent} onClick={() => setParentConsent(!user.classroom.parentConsent)}>
+                Zgoda rodzica: {user.classroom.parentConsent ? 'tak' : 'nie'}
+              </Btn>
+              {user.classroom.joinedId ? <Btn onClick={leaveClass}>Opuść klasę</Btn> : <Btn onClick={() => joinClass(classroom.code)}>Dołącz do klasy</Btn>}
             </div>
           </Section>
 

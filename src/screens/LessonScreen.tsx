@@ -17,7 +17,7 @@ import { openPaywall } from './startLesson'
 
 type Feedback = { correct: boolean; correctAnswer: string }
 
-function ExerciseView({ exercise, onAnswer }: { exercise: Exercise; onAnswer: (r: AnswerResult) => void }) {
+export function ExerciseView({ exercise, onAnswer }: { exercise: Exercise; onAnswer: (r: AnswerResult) => void }) {
   const entry = getEntry(exercise.type)
   const Component = entry.component as ComponentType<{ exercise: Exercise; onAnswer: (r: AnswerResult) => void }>
   return (

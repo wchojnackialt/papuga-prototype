@@ -1,0 +1,113 @@
+{
+  "title": "Unit 3 · Personality",
+  "words": [
+    {
+      "id": "w01",
+      "en": "friendly",
+      "pl": "przyjazny",
+      "read": "frlendly",
+      "flag": "uncertain"
+    },
+    {
+      "id": "w02",
+      "en": "shy",
+      "pl": "nieśmiały"
+    },
+    {
+      "id": "w03",
+      "en": "lazy",
+      "pl": "leniwy"
+    },
+    {
+      "id": "w04",
+      "en": "hard-working",
+      "pl": "pracowity"
+    },
+    {
+      "id": "w05",
+      "en": "generous",
+      "pl": "hojny"
+    },
+    {
+      "id": "w06",
+      "en": "selfish",
+      "pl": "samolubny"
+    },
+    {
+      "id": "w07",
+      "en": "clever",
+      "pl": "bystry",
+      "read": "c1ever",
+      "flag": "uncertain"
+    },
+    {
+      "id": "w08",
+      "en": "funny",
+      "pl": "zabawny"
+    },
+    {
+      "id": "w09",
+      "en": "honest",
+      "pl": "uczciwy"
+    },
+    {
+      "id": "w10",
+      "en": "polite",
+      "pl": "uprzejmy"
+    },
+    {
+      "id": "w11",
+      "en": "rude",
+      "pl": "niegrzeczny"
+    },
+    {
+      "id": "w12",
+      "en": "brave",
+      "pl": "odważny"
+    },
+    {
+      "id": "w13",
+      "en": "patient",
+      "pl": "cierpliwy",
+      "flag": "suggested"
+    },
+    {
+      "id": "w14",
+      "en": "talkative",
+      "pl": "rozmowny"
+    },
+    {
+      "id": "w15",
+      "en": "reliable",
+      "pl": "godny zaufania",
+      "flag": "suggested"
+    },
+    {
+      "id": "w16",
+      "en": "moody",
+      "pl": "humorzasty"
+    },
+    {
+      "id": "w17",
+      "en": "confident",
+      "pl": "pewny siebie"
+    },
+    {
+      "id": "w18",
+      "en": "bossy",
+      "pl": "apodyktyczny",
+      "read": "bossv",
+      "flag": "uncertain"
+    },
+    {
+      "id": "w19",
+      "en": "easy-going",
+      "pl": "wyluzowany"
+    },
+    {
+      "id": "w20",
+      "en": "curious",
+      "pl": "ciekawski"
+    }
+  ]
+}

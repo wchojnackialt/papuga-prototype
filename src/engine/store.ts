@@ -1,9 +1,10 @@
 import { create } from 'zustand'
 import { clock } from './clock'
-import { course, DEFAULT_PERSONA, league, personaSeeds } from './content'
+import { classroom, course, DEFAULT_PERSONA, league, personaSeeds } from './content'
 import * as rules from './rules'
-import { userStateSchema, type Plan, type TrackedEvent, type UserState } from './schema'
+import { userStateSchema, type Plan, type TrackedEvent, type UserState, type WordList } from './schema'
 import { storage } from './storage'
+import * as lists from './wordLists'
 
 // Stan aplikacji. Każda persona ma własny zapis w localStorage (`papuga:state:<persona>`, PRD §6.4),
 // dziennik zdarzeń jest wspólny (PRD §6.5).
@@ -44,6 +45,18 @@ type Store = {
   /** Pełne serca od ręki (panel prowadzącego). */
   refillHearts: () => void
   startTrial: (plan: Exclude<Plan, 'free'>) => void
+
+  // Moje listy
+  createList: (list: Omit<WordList, 'shared'>) => void
+  updateList: (list: WordList) => void
+  deleteList: (listId: string) => void
+  setShared: (listId: string, shared: boolean) => void
+  completeListPractice: (answers: { key: string; correct: boolean }[]) => void
+  /** Zwraca false przy złym kodzie. */
+  joinClass: (code: string) => boolean
+  leaveClass: () => void
+  /** Zgoda rodzica na klasy (panel testowy). */
+  setParentConsent: (consent: boolean) => void
 }
 
 export const useStore = create<Store>((set, get) => {
@@ -141,6 +154,41 @@ export const useStore = create<Store>((set, get) => {
 
     startTrial(plan) {
       apply(rules.startTrial(get().user, plan, clock.today()))
+    },
+
+    createList(list) {
+      apply(lists.createList(get().user, list))
+    },
+
+    updateList(list) {
+      apply(lists.updateList(get().user, list))
+    },
+
+    deleteList(listId) {
+      apply(lists.deleteList(get().user, listId))
+    },
+
+    setShared(listId, shared) {
+      apply(lists.setShared(get().user, listId, shared))
+    },
+
+    completeListPractice(answers) {
+      apply(rules.completeListPractice(get().user, { answers, today: clock.today() }))
+    },
+
+    joinClass(code) {
+      if (!lists.codeMatches(code, classroom)) return false
+      apply(lists.joinClass(get().user, classroom))
+      return true
+    },
+
+    leaveClass() {
+      apply(lists.leaveClass(get().user))
+    },
+
+    setParentConsent(parentConsent) {
+      const user = get().user
+      apply({ state: { ...user, classroom: { ...user.classroom, parentConsent } }, events: [] })
     },
   }
 })

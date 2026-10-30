@@ -102,6 +102,38 @@ export const badgeSchema = z.object({
 
 export type Badge = z.infer<typeof badgeSchema>
 
+// ── Moje listy: zestawy słówek i klasa ───────────────────────
+
+export const wordSchema = z.object({ id: z.string(), en: z.string(), pl: z.string() })
+
+export const wordListSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  testDate: dayKey.nullable(), // data sprawdzianu, opcjonalna
+  createdAt: dayKey,
+  shared: z.boolean().default(false), // udostępniony klasie
+  words: z.array(wordSchema),
+})
+
+export type Word = z.infer<typeof wordSchema>
+export type WordList = z.infer<typeof wordListSchema>
+
+/** Wynik „rozpoznania” zdjęcia (symulacja OCR): niepewne odczyty i podpowiedziane tłumaczenia są oznaczone. */
+export const photoSampleSchema = z.object({
+  title: z.string(),
+  words: z.array(wordSchema.extend({ read: z.string().optional(), flag: z.enum(['uncertain', 'suggested']).optional() })),
+})
+
+export const classroomSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  code: z.string(),
+  members: z.array(z.object({ id: z.string(), name: z.string(), avatar: z.string() })),
+  lists: z.array(wordListSchema.extend({ authorId: z.string() })),
+})
+
+export type Classroom = z.infer<typeof classroomSchema>
+
 // ── Stan użytkownika (PRD §6.4) ─────────────────────────────────────────
 
 export const goals = ['school', 'test', 'work', 'travel', 'self'] as const
@@ -152,6 +184,11 @@ export const userStateSchema = z.object({
   }),
   quests: z.object({ date: dayKey, items: z.array(questSchema) }),
   badges: z.array(z.string()),
+  // Pola z wartością domyślną: stany zapisane przed „Moimi listami” wczytują się bez błędu.
+  wordLists: z.array(wordListSchema).default([]),
+  // Seria poprawnych odpowiedzi z rzędu per słówko, klucz `listId/wordId`.
+  wordProgress: z.record(z.string(), z.number().int().nonnegative()).default({}),
+  classroom: z.object({ joinedId: z.string().nullable(), parentConsent: z.boolean() }).default({ joinedId: null, parentConsent: false }),
 })
 
 export type UserState = z.infer<typeof userStateSchema>

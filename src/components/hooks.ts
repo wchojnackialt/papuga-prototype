@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { track } from '../engine/track'
 
 export function usePrefersReducedMotion(): boolean {
   const query = '(prefers-reduced-motion: reduce)'
@@ -40,4 +41,15 @@ export function useFocusOnMount<T extends HTMLElement>() {
     ref.current?.focus({ preventScroll: true })
   }, [])
   return ref
+}
+
+/** Zdarzenie przy wejściu na ekran, raz na montowanie (StrictMode w dev uruchamia efekt dwa razy). */
+export function useTrackOnMount(name: string | null, props?: Record<string, unknown>) {
+  const done = useRef(false)
+  useEffect(() => {
+    if (done.current || !name) return
+    done.current = true
+    track(name, props)
+    // Props z pierwszego renderu: zdarzenie opisuje stan przy wejściu.
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 }

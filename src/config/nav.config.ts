@@ -1,6 +1,6 @@
-import { ListChecks, Path, Trophy, User, type Icon } from '@phosphor-icons/react'
+import { ListChecks, Notebook, Path, Trophy, User, type Icon } from '@phosphor-icons/react'
 
-export type TabId = 'path' | 'league' | 'quests' | 'profile' | (string & {})
+export type TabId = 'path' | 'league' | 'quests' | 'lists' | 'profile' | (string & {})
 
 export type NavItem = { id: TabId; label: string; icon: Icon }
 
@@ -10,6 +10,6 @@ export const navItems: NavItem[] = [
   { id: 'path', label: 'Ścieżka', icon: Path },
   { id: 'league', label: 'Liga', icon: Trophy },
   { id: 'quests', label: 'Zadania', icon: ListChecks },
-  // ← miejsce na piątą zakładkę
+  { id: 'lists', label: 'Moje listy', icon: Notebook },
   { id: 'profile', label: 'Profil', icon: User },
 ]

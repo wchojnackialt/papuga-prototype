@@ -12,10 +12,15 @@ import { useStore } from './engine/store'
 import { AdScreen } from './screens/AdScreen'
 import { LeagueScreen } from './screens/LeagueScreen'
 import { ChestScreen, LessonEndScreen } from './screens/LessonEndScreen'
+import { JoinClassScreen } from './screens/JoinClassScreen'
 import { LessonScreen } from './screens/LessonScreen'
+import { ListDetailScreen } from './screens/ListDetailScreen'
+import { ListPracticeEndScreen, ListPracticeScreen } from './screens/ListPracticeScreen'
+import { ListsScreen } from './screens/ListsScreen'
 import { OnboardingScreen } from './screens/OnboardingScreen'
 import { PathScreen } from './screens/PathScreen'
 import { PaywallScreen } from './screens/PaywallScreen'
+import { PhotoImportScreen } from './screens/PhotoImportScreen'
 import { ProfileScreen } from './screens/ProfileScreen'
 import { QuestsScreen } from './screens/QuestsScreen'
 import { openPaywall } from './screens/startLesson'
@@ -25,6 +30,7 @@ const tabScreens: Record<string, () => React.JSX.Element> = {
   path: PathScreen,
   league: LeagueScreen,
   quests: QuestsScreen,
+  lists: ListsScreen,
   profile: ProfileScreen,
 }
 
@@ -82,6 +88,11 @@ export default function App() {
             {screen.name === 'ad' && <AdScreen />}
             {screen.name === 'streak' && <StreakScreen />}
             {screen.name === 'paywall' && <PaywallScreen />}
+            {screen.name === 'photoImport' && <PhotoImportScreen />}
+            {screen.name === 'wordList' && <ListDetailScreen key={screen.listId} listId={screen.listId} />}
+            {screen.name === 'listPractice' && <ListPracticeScreen key={screen.run} listId={screen.listId} />}
+            {screen.name === 'listPracticeEnd' && <ListPracticeEndScreen summary={screen.summary} />}
+            {screen.name === 'joinClass' && <JoinClassScreen />}
           </>
         )}
       </PhoneFrame>

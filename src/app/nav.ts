@@ -4,6 +4,7 @@ import type { TabId } from '../config/nav.config'
 // Nawigacja bez routera: prototyp działa w ramce telefonu, a stan ekranu jest prosty i łatwy do rozbudowy.
 
 export type LessonSummary = { lessonId: string; xp: number; mistakes: number; accuracy: number; streak: number }
+export type PracticeSummary = { listId: string; knownBefore: number; known: number; total: number; accuracy: number; streak: number }
 
 export type Screen =
   | { name: 'tabs' }
@@ -13,6 +14,12 @@ export type Screen =
   | { name: 'ad' }
   | { name: 'streak' }
   | { name: 'paywall'; trigger: 'hearts' | 'streak_freeze' | 'profile_banner' }
+  // Moje listy
+  | { name: 'photoImport' }
+  | { name: 'wordList'; listId: string }
+  | { name: 'listPractice'; listId: string; run: number }
+  | { name: 'listPracticeEnd'; summary: PracticeSummary }
+  | { name: 'joinClass' }
 
 type Nav = {
   tab: TabId

@@ -39,5 +39,66 @@
     "date": "2026-10-20",
     "items": []
   },
-  "badges": []
+  "badges": [],
+  "wordLists": [
+    {
+      "id": "list-unit2",
+      "name": "Unit 2 · W domu",
+      "testDate": "2026-10-23",
+      "createdAt": "2026-10-15",
+      "shared": false,
+      "words": [
+        {
+          "id": "w01",
+          "en": "kitchen",
+          "pl": "kuchnia"
+        },
+        {
+          "id": "w02",
+          "en": "bedroom",
+          "pl": "sypialnia"
+        },
+        {
+          "id": "w03",
+          "en": "stairs",
+          "pl": "schody"
+        },
+        {
+          "id": "w04",
+          "en": "ceiling",
+          "pl": "sufit"
+        },
+        {
+          "id": "w05",
+          "en": "floor",
+          "pl": "podłoga"
+        },
+        {
+          "id": "w06",
+          "en": "wardrobe",
+          "pl": "szafa"
+        },
+        {
+          "id": "w07",
+          "en": "shelf",
+          "pl": "półka"
+        },
+        {
+          "id": "w08",
+          "en": "armchair",
+          "pl": "fotel"
+        }
+      ]
+    }
+  ],
+  "wordProgress": {
+    "list-unit2/w01": 2,
+    "list-unit2/w02": 2,
+    "list-unit2/w03": 1,
+    "list-unit2/w05": 2
+  },
+  "classroom": {
+    "joinedId": null,
+    "parentConsent": true
+  }
 }
